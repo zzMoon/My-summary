@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1-1</title>
+<style type="text/css">
+#outer{
+	background-color:green;
+	zoom:1;/*由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。*/
+}
+/*方法二清楚浮动*/
+#outer:after{ 
+    content:".";  
+    height:0;  
+    visibility:hidden;  
+    display:block;  
+    clear:both;  
+} 
+#inner{
+	width: 20%;
+	float: left;
+	height: 110px;
+	background-color:red;
+}
+</style>
+</head>
+<body>
+	<!--为什么要用到清楚浮动：
+		1。为“#inner”设定一个宽度值（比如说20%），但是由于div是块级元素，即使设定了宽度，其后面的内容也只能在下一行中显示，除非我们给它设定一个浮动属性（无论是向左浮动或者向右浮动），如果“#inner”的宽度和高度都比“#outer”小，这不会有问题。
+		2.如果“#inner”的高度超过了“#outer”，在此我设置成110px，那么“#inner”的底部就会超出“#outer”的底部。这时候就需要清楚浮动
+	-->
+	<div id="outer">     
+	  <div id="inner">
+	  	<h2>A Column</h2>
+	  </div>     
+	  <h1>Main Content</h1>     
+	  <p>Lorem ipsum</p>
+	  <!--方法一：
+	在此设置：<br style="clear:both;" />
+				或者使用
+			<div style="clear:both;"></div>
+		-->
+	</div>
+</body>
+</html>

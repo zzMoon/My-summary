@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <script type="text/javascript" src="jquery-2.1.4.min.js"></script> 
+	 <script type="text/javascript">
+	 	var timer;  
+	    $(function(){  
+	      $(window).scroll(function(){
+	        clearInterval(timer);  
+	        var topScroll=getScroll();  
+	        var topDiv="40px";  
+	        var top=topScroll+parseInt(topDiv);  
+	        timer=setInterval(function(){  
+	            // $(".menu").css("top", top+"px");  //无动画效果
+	             $(".menu").animate({"top":top},300);  //有动画效果
+	        },300)  
+	      })  
+	    })  
+	    function getScroll(){  
+	         var bodyTop = 0;    
+	         if (typeof window.pageYOffset != 'undefined') {    
+	             bodyTop = window.pageYOffset;    
+	         } else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {    
+	             bodyTop = document.documentElement.scrollTop;    
+	         }    
+	         else if (typeof document.body != 'undefined') {    
+	             bodyTop = document.body.scrollTop;    
+	         }    
+	         return bodyTop  
+	    }  
+	 </script>
+	<style>
+		*{margin:0; padding:0;}
+		html,body{
+			height: 100%;
+		}
+		.main{
+			width: 100%;
+			min-height: 100%;
+			overflow: hidden;
+			background: #000;
+		}
+		.header{
+			width: 100%;
+			background: #eee;
+			height: 40px;
+		}
+		.side{
+			width: 10%;
+			float: left;
+			margin-left: -1px;
+			background: blue;
+			min-height: 200px;
+			padding-bottom: 999em;
+			margin-bottom: -999em;
+		}
+		.content{
+			width: 90%;
+			float: right;
+			margin-right: -1px;
+			background: yellow;
+			min-height: 200px;
+			padding-bottom: 999em;
+			margin-bottom: -999em;
+		}
+		.menu{
+			border: 5px solid #887766;
+			height: 400px;
+			background: #000; 
+			position:absolute;
+			width:9%;
+			top:40px;
+			left:5px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="main">
+		<div class="header"></div>
+		<div class="side">
+			<div class="menu"></div>
+		</div>
+		<div class="content">
+			<div style="height:10000px;"></div>
+		</div>
+	</div>
+	
+</body>
+</html>

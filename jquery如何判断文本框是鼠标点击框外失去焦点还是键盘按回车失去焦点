@@ -1,0 +1,61 @@
+ jquery如何判断文本框是鼠标点击框外失去焦点还是键盘按回车失去焦点
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+
+window.onload = function(){
+	
+	var oInput = document.getElementsByTagName('input')[0];
+	var bBtn = false;
+	
+	oInput.onkeypress = function(ev){
+		
+		var oEv = ev || event;
+		
+		if(oEv.keyCode == 13){
+			
+			bBtn = true;
+			this.blur();
+			
+			}
+			
+		else{
+			
+			bBtn=false;
+			
+			}
+		
+		};
+	
+	oInput.onblur = function(){
+
+		if(bBtn){
+			
+			alert('是按回车失去焦点的');
+			
+			}
+			
+		else{
+			
+			alert('是点击页面失去焦点的');
+			
+			}
+		
+		};
+	
+	};
+
+</script>
+</head>
+
+<body>
+
+<input type="text" placeholder="失去焦点判断" />
+
+</body>
+</html>

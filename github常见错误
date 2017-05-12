@@ -1,0 +1,32 @@
+一、如果輸入$ git remote add origin git@github.com:djqiang（github帳號名）/gitdemo（項目名）.git 
+
+    提示出錯信息：fatal: remote origin already exists.
+
+    解決辦法如下：
+
+    1、先輸入$ git remote rm origin
+
+    2、再輸入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不會報錯了！
+
+    3、如果輸入$ git remote rm origin 還是報錯的話，
+    error: Could not remove config section 'remote.origin'. 我們需要修改gitconfig文件的內容
+
+    4、找到你的github的安裝路徑，我的是C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc
+
+    5、找到一個名為gitconfig的文件，打開它把裡面的
+    [remote "origin"]那一行刪掉就好了！
+    
+二、如果輸入$ git push origin master
+
+    提示出錯信息：error:failed to push som refs to .......
+
+    解決辦法如下：
+
+    1、先輸入$ git pull origin master //先把遠程伺服器github上面的文件拉下來
+
+    2、再輸入$ git push origin master
+
+    3、如果出現報錯 fatal: Couldn't find remote ref master或者fatal: 'origin' does not appear to be a git repository以及fatal:
+Could not read from remote repository.
+
+    4、則需要重新輸入$ git remote add origingit@github.com:djqiang/gitdemo.git

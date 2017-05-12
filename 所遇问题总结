@@ -1,0 +1,8 @@
+一、报错：Uncaught TypeError: Cannot read property 'msie' of undefined
+    因为引用jQuery插件，而引起的错误
+    解决：
+        $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());
+        $.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
+        $.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
+        $.browser.msie = /msie/.test(navigator.userAgent.toLowerCase());
+      如：$.browser.msie报错的话，就用/msie/.test(navigator.userAgent.toLowerCase())替换$.browser.msie即可；

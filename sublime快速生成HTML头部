@@ -1,0 +1,73 @@
+使用sublime text2如何新建文件快速生成HTML头部信息（按tab键）
+1、html:4t
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="${lang}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=${charset}">
+    <title>Document</title>
+</head>
+<body>
+    ${child}
+</body>
+</html>
+
+
+2、html:4t
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="${lang}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=${charset}">
+    <title>Document</title>
+</head>
+<body>
+    ${child}
+</body>
+</html>
+
+3、html:xt
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="${lang}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=${charset}" />
+    <title></title>
+</head>
+<body>
+    ${child}
+</body>
+</html>
+
+4、html:xs
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="${lang}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=${charset}" />
+    <title>Document</title>
+</head>
+<body>
+    ${child}
+</body>
+</html>
+
+5、html:xxs
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="${lang}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=${charset}" />
+    <title>Document</title>
+</head>
+<body>
+    ${child}
+</body>
+</html>
+
+6、html:5
+<!doctype html>
+<html lang="${lang}">
+<head>
+    <meta charset="${charset}">
+    <title>Document</title>
+</head>
+<body>
+    ${child}
+</body>
+</html>
